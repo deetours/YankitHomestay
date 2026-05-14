@@ -4,16 +4,24 @@ import { useStickyHeader } from '@/hooks/use-sticky-header';
 import { YANKIT_METADATA, SCROLL_SECTIONS } from '@/lib/constants';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import type { MouseEvent } from 'react';
 
 export function StickyHeader() {
   const isSticky = useStickyHeader();
 
   const navLinks = [
-    { label: 'Origin', href: `#${SCROLL_SECTIONS.ORIGIN.id}` },
-    { label: 'Experience', href: `#${SCROLL_SECTIONS.EXPERIENCE.id}` },
-    { label: 'Spaces', href: `#${SCROLL_SECTIONS.SPACES.id}` },
-    { label: 'Inquire', href: `#${SCROLL_SECTIONS.BOOKING.id}` },
+    { label: 'Stay', targetId: SCROLL_SECTIONS.SPACES.id },
+    { label: 'Experiences', targetId: SCROLL_SECTIONS.RITUALS.id },
+    { label: 'About', targetId: SCROLL_SECTIONS.ORIGIN.id },
+    { label: 'Gallery', targetId: SCROLL_SECTIONS.PROOF.id },
   ];
+
+  const handleNavClick = (targetId: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const section = document.getElementById(targetId);
+    if (!section) return;
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <motion.header
@@ -31,13 +39,14 @@ export function StickyHeader() {
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
+            <a
+              key={link.targetId}
+              href={`#${link.targetId}`}
+              onClick={handleNavClick(link.targetId)}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 

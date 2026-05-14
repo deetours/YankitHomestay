@@ -38,13 +38,13 @@ export function WarmthSection() {
             <h3 className="font-serif text-2xl font-semibold text-foreground mb-8">What&apos;s Included</h3>
             <div className="grid md:grid-cols-2 gap-8">
               {[
-                ['Accommodation', 'Private rooms or shared dormitories'],
+                ['Accommodation', 'Private rooms and family-friendly shared spaces'],
                 ['Meals', 'Farm-to-table, locally sourced'],
                 ['Meditation & Yoga', 'Morning and evening sessions'],
                 ['Guided Walks', 'Explore Spiti at your own pace'],
                 ['Monastery Visits', 'With cultural sensitivity'],
                 ['Stargazing', 'Evening sessions with guidance'],
-                ['Library Access', '500+ books on silence & spirituality'],
+                ['Reading Corner', 'Curated books on silence, mountains, and local life'],
                 ['Community Dinners', 'Evening conversations & stories'],
               ].map((service, i) => (
                 <div key={i} className="flex gap-4">

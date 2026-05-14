@@ -21,16 +21,16 @@ export const SPACES = [
   {
     id: 'private-room',
     name: 'Private Rooms',
-    description: 'Intimate spaces with views of the Kinner Kailash peak. Each room is a sanctuary.',
-    features: ['Heated floors', 'Window views', 'Soft linens', 'Reading nook'],
-    image: '/images/room.jpg',
+    description: 'Intimate spaces with views of the Spiti Valley. Each room is a sanctuary.',
+    features: ['Heater Available', 'Window views', 'Soft linens', 'Reading nook'],
+    image: '/images/bedroom2.webp',
   },
   {
     id: 'common-area',
     name: 'Shared Living',
     description: 'Gather around the fireplace for evening conversations and chai.',
-    features: ['Library', 'Fireplace', 'Cooking classes', 'Yoga mat'],
-    image: '/images/common.jpg',
+    features: ['Bukhari', 'WiFi None (by design)', 'N/A', 'Yoga mat'],
+    image: '/images/dining.webp',
   },
   {
     id: 'meditation',
@@ -44,24 +44,24 @@ export const SPACES = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: 'Guest',
+    name: 'Tulika Choudhury',
     role: 'Stayed September 2023',
-    text: 'Yankit taught me that silence is not the absence of sound, but the presence of peace.',
-    image: '/images/testimonial-1.jpg',
+    text: 'Me along with my friends stayed in this homestay for three nights and our experience was beyond words.',
+    image: '/images/review1.png',
   },
   {
     id: 2,
-    name: 'Guest',
+    name: 'Rishi Kabra',
     role: 'Stayed August 2023',
-    text: 'The monastery bells at dawn, the stars at night—this place offered true rest.',
-    image: '/images/testimonial-2.jpg',
+    text: 'Really loved our stay here and would highly recommend this place to friends and family coming to Kaza.',
+    image: '/images/review2.png',
   },
   {
     id: 3,
-    name: 'Guest',
+    name: 'Sourav Prasher',
     role: 'Stayed July 2023',
-    text: 'The silence was as nourishing as the hospitality. A rare find.',
-    image: '/images/testimonial-3.jpg',
+    text: 'I spent three nights at this homestay in Kaza and couldn’t have picked a better place. The rooms are clean and cozy.',
+    image: '/images/review3.png',
   },
 ];
 

@@ -1,0 +1,349 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  background: #f4efe8;
+  color: #2f2924;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 45%, rgba(255, 255, 255, 0.55), transparent 30%),
+    radial-gradient(circle at 78% 78%, rgba(154, 75, 53, 0.08), transparent 32%);
+  z-index: 1;
+}
+
+.nav {
+  position: absolute;
+  top: 36px;
+  left: 64px;
+  right: 64px;
+  height: 56px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  text-decoration: none;
+  color: #2f2924;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.logoMain {
+  font-family: var(--font-serif), "Cormorant Garamond", serif;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.logoSub {
+  font-family: var(--font-sans), "Inter", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  font-family: var(--font-sans), "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.navLinks a {
+  color: #2f2924;
+  text-decoration: none;
+}
+
+.bookButton {
+  height: 52px;
+  padding: 0 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 75, 53, 0.38);
+  background: rgba(255, 255, 255, 0.18);
+  color: #9a4b35;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans), "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.content {
+  position: absolute;
+  left: 5vw;
+  top: 22vh;
+  width: 560px;
+  z-index: 20;
+}
+
+.eyebrow {
+  font-family: var(--font-sans), "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9a4b35;
+  margin: 0 0 44px;
+}
+
+.headline {
+  font-family: var(--font-serif), "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(68px, 6.2vw, 118px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: #2f2924;
+  max-width: 620px;
+  margin: 0;
+}
+
+.subheadline {
+  font-family: var(--font-sans), "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(47, 41, 36, 0.72);
+  max-width: 520px;
+  margin: 30px 0 0;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.primaryCta,
+.secondaryCta {
+  height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  font-family: var(--font-sans), "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 180ms ease;
+}
+
+.primaryCta {
+  background: #a95235;
+  color: #fff8ef;
+}
+
+.primaryCta:hover {
+  background: #8e3f2b;
+  transform: translateY(-1px);
+}
+
+.secondaryCta {
+  background: transparent;
+  border: 1px solid rgba(47, 41, 36, 0.18);
+  color: #2f2924;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(47, 41, 36, 0.3);
+}
+
+.trustRow {
+  margin-top: 58px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-family: var(--font-sans), "Inter", sans-serif;
+  font-size: 15px;
+  color: rgba(47, 41, 36, 0.68);
+}
+
+.trustItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trustIcon {
+  width: 18px;
+  height: 18px;
+  color: #9a4b35;
+  flex: 0 0 auto;
+}
+
+.imageFrame {
+  position: absolute;
+  left: 41vw;
+  top: 14vh;
+  width: 54vw;
+  height: 68vh;
+  z-index: 5;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #d8c7aa;
+  box-shadow: 0 34px 90px rgba(47, 41, 36, 0.12);
+}
+
+.imageFrame :global(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: saturate(0.88) contrast(0.96) brightness(1.04);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 245, 220, 0.08), rgba(47, 41, 36, 0.08));
+}
+
+.interiorCutout {
+  position: absolute;
+  right: 4.5vw;
+  bottom: 8vh;
+  width: clamp(250px, 18vw, 330px);
+  height: clamp(160px, 13vw, 220px);
+  z-index: 12;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #d8c7aa;
+  box-shadow: 0 24px 70px rgba(47, 41, 36, 0.22);
+  border: 6px solid #f4efe8;
+}
+
+.interiorCutout :global(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(0.92) contrast(0.98) brightness(1.02);
+}
+
+.cutoutOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(20, 12, 8, 0.12));
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: auto;
+    overflow: hidden;
+    padding-bottom: 56px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav {
+    top: 24px;
+    left: 22px;
+    right: 22px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .bookButton {
+    height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  .imageFrame {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 32px);
+    height: 46vh;
+    margin: 104px auto 0;
+    border-radius: 20px;
+    order: 1;
+  }
+
+  .content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    margin: 48px 24px 0;
+    order: 2;
+  }
+
+  .eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .headline {
+    font-size: clamp(48px, 14vw, 70px);
+    line-height: 0.94;
+  }
+
+  .subheadline {
+    font-size: 16px;
+    max-width: none;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+  }
+
+  .trustRow {
+    margin-top: 32px;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+
+  .interiorCutout {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: calc(100% - 48px);
+    height: 230px;
+    margin: 42px 24px 0;
+    order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoMain {
+    font-size: 29px;
+  }
+
+  .logoSub {
+    font-size: 9px;
+  }
+
+  .bookButton {
+    height: 42px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+}

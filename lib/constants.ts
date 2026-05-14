@@ -1,16 +1,16 @@
 export const YANKIT_METADATA = {
   name: 'Yankit Homestay',
   tagline: 'Silence in the Himalayas',
-  subtitle: 'Discover the art of silence at 12,000 feet',
+  subtitle: 'Discover the art of silence at 12,800 feet',
   location: 'Spiti Valley, Himalayas',
   coordinates: { lat: 32.223, lng: 78.058 },
-  whatsapp: '+919418012345',
+  whatsapp: '+918091416959',
   email: 'stay@yankithomestay.com',
   instagram: '@yankit_spiti',
 } as const;
 
 export const ALTITUDE_LEVELS = [
-  { elevation: 12000, label: 'Peak Silence' },
+  { elevation: 12800, label: 'Peak Silence' },
   { elevation: 11000, label: 'Morning Light' },
   { elevation: 10000, label: 'Monastery Bells' },
   { elevation: 8000, label: 'Base Camp' },

@@ -18,13 +18,14 @@ export function OriginSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
           <ScrollReveal delay={0.1}>
             <div className="bg-background rounded-lg p-8 border border-border">
+              <p className="body-lg text-foreground mb-6">We are from Spiti - born and brought up in this land.</p>
               <p className="body-lg text-foreground mb-6">
-                In 2019, we fell in love with Spiti Valley. Not the Instagram version—the real one. The silence
-                between the monastery bells. The stars you could count. The humans who still remember how to slow down.
+                Yankit is not built from the outside looking in. It comes from people who know the roads, the seasons,
+                the silence, the cold, the food, the villages, and the rhythm of life here.
               </p>
               <p className="body-lg text-foreground">
-                We built Yankit as a love letter to that place. Every corner reflects our belief: that luxury
-                isn&apos;t about more—it&apos;s about better. Better silence. Better company. Better memories.
+                For us, hospitality is not performance. It is how we have always lived - with warmth, care, and deep
+                respect for the land that raised us.
               </p>
             </div>
           </ScrollReveal>
@@ -35,14 +36,14 @@ export function OriginSection() {
                 <h3 className="font-serif text-2xl font-semibold text-primary mb-3">Why We're Different</h3>
                 <ul className="space-y-4">
                   {[
-                    'Limited to 12 guests per session—intimacy, not crowds',
-                    'No Wi-Fi in rooms—intentional digital detox',
-                    'All meals sourced locally—support for village economies',
-                    'Guided experiences—not tourist traps',
-                    'Your story matters—we listen.',
+                    'Limited to 12–18 guests per session - intimacy, not crowds.',
+                    'Digital Detox Friendly - limited connectivity by design',
+                    'All meals sourced locally-support for village economies',
+                    'Guided experiences-not tourist traps',
+                    'Your story matters-we listen.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span className="text-[#d4a574]">✓</span>
+                      <span className="text-[#d4a574]">?</span>
                       <span className="body-base text-foreground">{item}</span>
                     </li>
                   ))}

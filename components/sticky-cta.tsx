@@ -6,6 +6,7 @@ import { YANKIT_METADATA, SCROLL_SECTIONS } from '@/lib/constants';
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isBookingInView, setIsBookingInView] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +22,26 @@ export function StickyCTA() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const bookingSection = document.getElementById(SCROLL_SECTIONS.BOOKING.id);
+    if (!bookingSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsBookingInView(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(bookingSection);
+    return () => observer.disconnect();
+  }, []);
+
   const whatsappMessage = encodeURIComponent('Hello, I would like to inquire about availability at Yankit Homestay.');
+  const ctaHref = isBookingInView
+    ? `https://wa.me/${YANKIT_METADATA.whatsapp.replace('+', '')}?text=${whatsappMessage}`
+    : `#${SCROLL_SECTIONS.BOOKING.id}`;
+  const ctaLabel = isBookingInView ? 'Confirm on WhatsApp' : 'Reserve your dates';
 
   return (
     <AnimatePresence>
@@ -40,12 +60,12 @@ export function StickyCTA() {
             </div>
             
             <a
-              href={`https://wa.me/${YANKIT_METADATA.whatsapp.replace('+', '')}?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={ctaHref}
+              target={isBookingInView ? '_blank' : undefined}
+              rel={isBookingInView ? 'noopener noreferrer' : undefined}
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap active:scale-95 transition-transform"
             >
-              Check dates
+              {ctaLabel}
             </a>
           </div>
         </motion.div>

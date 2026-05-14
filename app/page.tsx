@@ -1,7 +1,6 @@
 'use client';
 
-import { StickyHeader } from '@/components/sticky-header';
-import { HeroSection } from '@/components/sections/hero';
+import { FloatingSilenceHero } from '@/components/hero/FloatingSilenceHero';
 import { TrustStripSection } from '@/components/sections/trust-strip';
 import { SpacesSection } from '@/components/sections/spaces';
 import { RitualsSection } from '@/components/sections/rituals';
@@ -16,9 +15,7 @@ import { StickyCTA } from '@/components/sticky-cta';
 export default function Home() {
   return (
     <main className="w-full">
-      <StickyHeader />
-      
-      <HeroSection />
+      <FloatingSilenceHero />
       <TrustStripSection />
       <SpacesSection />
       <RitualsSection />
